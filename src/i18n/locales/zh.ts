@@ -9,6 +9,10 @@ const zh = {
       "本项目与 Cor3 / Fragmentary Order 官方无任何关联，亦未获得其认可或赞助。游戏及相关商标、素材与知识产权均归原权利人所有（Fragment Order / Rant Studio）。",
     rightsNotice:
       "若你是素材权利人并希望移除相关内容，请通过下方链接联系我们。",
+    links: "相关链接",
+    linkFragmentOrder: "Fragment Order 官网",
+    linkCor3: "Cor3 官网",
+    linkDiscord: "FragO 官方 Discord",
     close: "关闭",
     nickname: "昵称",
     nicknamePlaceholder: "输入昵称",

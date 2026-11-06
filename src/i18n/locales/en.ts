@@ -9,6 +9,10 @@ const en = {
       "This project is not affiliated with, endorsed by, or sponsored by Cor3 or Fragmentary Order. The game, related trademarks, assets, and intellectual property belong to their respective owners (Fragment Order / Rant Studio).",
     rightsNotice:
       "If you are a rights holder and would like content removed, please reach out via the link below.",
+    links: "Related links",
+    linkFragmentOrder: "Fragment Order official site",
+    linkCor3: "Cor3 official site",
+    linkDiscord: "FragO official Discord",
     close: "Close",
     nickname: "Nickname",
     nicknamePlaceholder: "Enter a nickname",

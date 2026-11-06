@@ -1,7 +1,7 @@
 {
   "name": "frago-dossier",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Frago / Fragmentary Order 风格名片生成器（Vite + React + TanStack Router + Tailwind v4 + daisyUI）",
   "type": "module",
   "scripts": {

@@ -255,6 +255,41 @@ export function SidePanel({
             GitHub Issues
             <ExternalLink className="h-3 w-3" />
           </a>
+
+          {/* 相关链接：官网与官方 Discord */}
+          <div className="mt-4 border-t border-white/10 pt-3">
+            <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-base-content/50">
+              {t("panel.links")}
+            </p>
+            <ul className="space-y-1.5">
+              {[
+                {
+                  label: t("panel.linkFragmentOrder"),
+                  href: "https://fragmentaryorder.com/",
+                },
+                {
+                  label: t("panel.linkCor3"),
+                  href: "https://cor3.gg/",
+                },
+                {
+                  label: t("panel.linkDiscord"),
+                  href: "https://discord.gg/frago",
+                },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between gap-2 rounded-[3px] border border-white/10 bg-white/[0.02] px-2.5 py-1.5 text-xs text-base-content/80 transition-colors hover:border-primary/40 hover:text-primary"
+                  >
+                    <span>{link.label}</span>
+                    <ExternalLink className="h-3 w-3 shrink-0 opacity-60" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       ),
     },
