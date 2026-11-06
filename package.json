@@ -1,0 +1,41 @@
+{
+  "name": "frago-dossier",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Frago / Fragmentary Order 风格名片生成器（Vite + React + TanStack Router + Tailwind v4 + daisyUI）",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "generate": "tsr generate",
+    "build:embed": "vite build --config vite.embed.config.ts",
+    "build": "pnpm generate && tsc --noEmit && pnpm build:embed && cp dist-embed/embed.js public/embed.js && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.6",
+    "@fontsource/ibm-plex-sans": "^5.2.6",
+    "@tanstack/react-router": "^1.170.31",
+    "html-to-image": "^1.11.13",
+    "i18next": "^26.3.6",
+    "lucide-react": "^1.33.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-i18next": "^17.0.11",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@tanstack/router-cli": "^1.167.32",
+    "@tanstack/router-plugin": "^1.168.34",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "daisyui": "^5.7.20",
+    "oxlint": "^1.75.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.0"
+  }
+}

@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* 字体（开源 IBM Plex，fontsource 提供 woff2；仅 Latin 子集） */
+@import "@fontsource/ibm-plex-sans/latin-400.css";
+@import "@fontsource/ibm-plex-sans/latin-500.css";
+@import "@fontsource/ibm-plex-sans/latin-600.css";
+@import "@fontsource/ibm-plex-sans/latin-700.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
+
+/* Frago 主题（daisyUI token + 扩展 token + 组件样式来源） */
+@import "./theme/index.css";
+
+@plugin "daisyui" {
+  themes: false;
+  logs: false;
+}
+
+/* 主题组件位于 src/theme/components，Tailwind 默认扫描 src；无需额外 @source */
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-base-100 font-primary text-base-content antialiased;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-primary) 32%, transparent);
+  }
+}
+
+/* 名片顶部序列号：容器宽度 ≥520px 时显示，避免窄卡片拥挤 */
+.dossier-serial {
+  display: none;
+}
+
+@container (min-width: 520px) {
+  .dossier-serial {
+    display: block;
+  }
+}

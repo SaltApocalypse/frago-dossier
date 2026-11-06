@@ -1,0 +1,126 @@
+/* =====================================================================
+ * 项目内置 Frago 风格设计系统（由原独立主题包内联）
+ *
+ * 视觉来源：fragmentaryorder.com 名片（暗色军事科技风）。
+ * 只沉淀视觉语言（配色 / token / 扩展动画 / 组件视觉定制），组件在
+ * ./components 中提供，供应用层组合。
+ *
+ * 入口 CSS 引入：
+ *   @import "./theme/index.css";
+ *
+ * 配色统一以主题 token 为准；JS/SVG 侧引用 ./tokens
+ * ===================================================================== */
+
+@plugin "daisyui/theme" {
+  name: "frago";
+  default: true;
+  color-scheme: "dark";
+
+  /* 基础表面（页面深底 / 卡面 / 边框） */
+  --color-base-100: #0e1116;
+  --color-base-200: #162028;
+  --color-base-300: #27363a;
+  --color-base-content: #b5b8bb;
+
+  /* 主色：信号青 */
+  --color-primary: #5cbfcd;
+  --color-primary-content: #08181b;
+
+  /* 副色：高亮青 */
+  --color-secondary: #9ce8f2;
+  --color-secondary-content: #0b1a1d;
+
+  /* 强调：全息紫 */
+  --color-accent: #cd52ff;
+  --color-accent-content: #1a0b22;
+
+  /* 中性（边框/弱化） */
+  --color-neutral: #434a51;
+  --color-neutral-content: #b5b8bb;
+
+  /* 状态色 */
+  --color-info: #5cbfcd;
+  --color-info-content: #08181b;
+  --color-success: #00cdab;
+  --color-success-content: #04211c;
+  --color-warning: #f0a338;
+  --color-warning-content: #2b1502;
+  --color-error: #e5484d;
+  --color-error-content: #2b0a0c;
+
+  /* 形状：原站卡片/按钮 4px、徽章 2px、0.5px 描边 */
+  --radius-selector: 4px;
+  --radius-field: 4px;
+  --radius-box: 4px;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 0.5px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  /* 字体：IBM Plex（开源，由使用方引入字体文件） */
+  --font-primary: "IBM Plex Sans", "CJK Punctuation ZH", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "CJK Punctuation ZH", ui-monospace, monospace;
+
+  /* 主色阶（取自原站） */
+  --color-primary-bright: #9ce8f2;
+  --color-primary-dim: #3d8993;
+  --color-primary-deep: #2e6269;
+
+  /* 按钮（原站 primary / ghost 状态） */
+  --color-btn-bg: #122c30;
+  --color-btn-border: #3d8993;
+  --color-btn-fg: #5cbfcd;
+  --color-btn-hover-bg: #163b42;
+  --color-btn-hover-border: #5cbfcd;
+  --color-btn-hover-fg: #9ce8f2;
+  --color-btn-active-bg: #102629;
+  --color-btn-active-border: #2e6269;
+  --color-btn-active-fg: #40a5b3;
+  --color-btn-disabled-bg: #0f2427;
+  --color-btn-disabled-border: #1a3d41;
+  --color-btn-disabled-fg: #27575d;
+
+  /* 文本与表面 */
+  --color-text-dim: #94989c;
+  --color-text-faint: #5f6367;
+  --color-surface-raised: #1b2730;
+  --color-link: #cd52ff;
+  --color-link-hover: #dc85ff;
+
+  /* 动画 */
+  --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-card-in: card-in 0.35s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes card-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* 页面背景：暗底 + 轻微径向提亮（避免纯黑）；装饰层不拦截交互 */
+@utility bg-frago-vignette {
+  background-image: radial-gradient(
+    ellipse at top,
+    color-mix(in srgb, var(--color-base-200) 92%, white) 0%,
+    var(--color-base-100) 62%,
+    #080a0d 100%
+  );
+}
